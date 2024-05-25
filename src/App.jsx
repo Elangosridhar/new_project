@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { PrimeReactProvider } from 'primereact/api';
 
 import './App.css'
-import Login from './Component/Loginform/Login'
+import Login from './Form/Loginform/Login'
+import Registration from './Component/Registration/Registration';
 
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
 
   return (
     <PrimeReactProvider>
-           <Login></Login>
+           
+
+           <Registration></Registration>
       
     </PrimeReactProvider>
   )
