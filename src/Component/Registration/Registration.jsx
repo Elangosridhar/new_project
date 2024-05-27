@@ -1,24 +1,27 @@
 import React, { useState } from 'react'
 import Registerform from '../../Form/Registerform'
+import { apiregister } from '../../Service/authentication/apiregister';
+import toast from 'react-hot-toast';
 
 export default function Registration() {
     const [data, setData] = useState({
-        // name: '',
-        // email: '',
-        // phone: '',
-        // role: '',
-        // password: ''
+      
       });
     
-      const handleChange = (e) => {
-        e.preventDefault();
-        setData({ ...data, [e.target.name]: e.target.value });
+      const handleChange =async (e) => {
+        
+        setData({ ...data,...{[e.target.name]: e.target.value }});
+        
+        
       };
     
-      const register = async (data) => {
+      const register = async (e) => {
+        e.preventDefault();
         console.log(data);
-      };
-
+        const res = await apiregister(data)
+        console.log(res)
+        res.message=="successfully registered"?toast.success(res.message):toast.error("failed to registered")
+      }
   return (
     <div>
         <Registerform handleChange={handleChange} register={register}/>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function Login() {
@@ -82,9 +83,9 @@ export default function Login() {
               </button>
             </div>
             <div className="text-sm text-center">
-              <a to="/signup" className="font-medium text-[#495057] ">
+             <Link to={'/'}><a  className="font-medium text-[#495057] ">
                 Don't have an account? Sign up
-              </a>
+              </a></Link> 
             </div>
           </form>
         </div>

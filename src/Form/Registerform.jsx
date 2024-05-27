@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Registerform (props) {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -6,7 +7,7 @@ export default function Registerform (props) {
   
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
-    setType(passwordVisible ? "password" : "text");
+    setType( passwordVisible ? "password" : "text");
   };
  
   const {handleChange,register}=props
@@ -28,7 +29,7 @@ export default function Registerform (props) {
             <div className="space-y-4">
               <div className="relative">
                 <label htmlFor="name" className="sr-only">Name</label>
-                <input id="name" name="name" type="text" autoComplete="name" onChange={handleChange} required
+                <input  name="name" type="text" autoComplete="name" onChange={handleChange} required
                   className="relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 rounded-t-md sm:text-sm hover:border-[#495057]"
                   placeholder="Name"
                 />
@@ -38,7 +39,7 @@ export default function Registerform (props) {
               </div>
               <div className="relative">
                 <label htmlFor="email" className="sr-only">Email address</label>
-                <input id="email" name="email" type="email" autoComplete="email" onChange={handleChange} required
+                <input  name="email" type="email"  onChange={handleChange} required
                   className="relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 sm:text-sm hover:border-[#495057]"
                   placeholder="Email address"
                 />
@@ -48,7 +49,7 @@ export default function Registerform (props) {
               </div>
               <div className="relative">
                 <label htmlFor="phone" className="sr-only">Phone number</label>
-                <input id="phone" name="phone" type="tel" autoComplete="tel" onChange={handleChange} required
+                <input  name="phone" type="tel"  onChange={handleChange} required
                   className="relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 sm:text-sm hover:border-[#495057]"
                   placeholder="Phone number"
                 />
@@ -58,7 +59,7 @@ export default function Registerform (props) {
               </div>
               <div className="relative">
                 <label htmlFor="role" className="sr-only">Role</label>
-                <input id="role" name="role" type="text" autoComplete="role" onChange={handleChange} required
+                <input  name="role" type="text"  onChange={handleChange} required
                   className="relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 sm:text-sm hover:border-[#495057]"
                   placeholder="Role"
                 />
@@ -68,7 +69,7 @@ export default function Registerform (props) {
               </div>
               <div className="relative">
                 <label htmlFor="password" className="sr-only">Password</label>
-                <input id="password" name="password" type={type} autoComplete="current-password" onChange={handleChange} required
+                <input  name="password" type={type} autoComplete="current-password" onChange={handleChange} required
                   className="relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 rounded-b-md sm:text-sm hover:border-[#495057]"
                   placeholder="Password"
                 />
@@ -76,7 +77,7 @@ export default function Registerform (props) {
                   <i className="fi fi-rr-key"></i>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={togglePasswordVisibility}>
-                  <i className={`fi ${passwordVisible ? 'fi-rr-eye' : 'fi-rr-eye-crossed'} text-gray-400`}></i>
+                  <i className={`fi ${passwordVisible ? 'fi-rr-eye' : 'fi-rr-eye-crossed'} text-gray-400`}> </i>
                 </div>
               </div>
             </div>
@@ -86,8 +87,8 @@ export default function Registerform (props) {
               </button>
             </div>
             <div className="text-sm text-center">
-              <a href="" className="font-medium text-[#495057]">
-                Already have an account? Log in
+           <a href="" className="font-medium text-[#495057]">
+                Already have an account? <Link to={'/login'} >Log in</Link>
               </a>
             </div>
           </form>
