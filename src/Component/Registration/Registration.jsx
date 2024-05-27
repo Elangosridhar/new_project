@@ -20,7 +20,8 @@ export default function Registration() {
         console.log(data);
         const res = await apiregister(data)
         console.log(res)
-        res.message=="successfully registered"?toast.success(res.message):toast.error("failed to registered")
+
+        res.message=="successfully registered"?toast.success("successfully registered"):toast.error("failed to registered")
       }
   return (
     <div>

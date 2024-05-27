@@ -87,9 +87,9 @@ export default function Registerform (props) {
               </button>
             </div>
             <div className="text-sm text-center">
-           <a href="" className="font-medium text-[#495057]">
-                Already have an account? <Link to={'/login'} >Log in</Link>
-              </a>
+            <Link to={'/login'} className="font-medium text-[#495057]">
+                Already have an account?  Log in</Link>
+             
             </div>
           </form>
         </div>

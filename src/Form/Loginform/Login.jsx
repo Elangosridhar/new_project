@@ -83,9 +83,9 @@ export default function Login() {
               </button>
             </div>
             <div className="text-sm text-center">
-             <Link to={'/'}><a  className="font-medium text-[#495057] ">
+             <Link to={'/'}  className="font-medium text-[#495057] ">
                 Don't have an account? Sign up
-              </a></Link> 
+              </Link> 
             </div>
           </form>
         </div>
